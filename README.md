@@ -29,6 +29,6 @@ game) to move the character left or right.
 - **Objective**: Survive as long as possible, collect as many possible 
 power-ups, and avoid or destroy  obstacles to achieve the highest score.
 
-Art by [Instagram](https://www.instagram.com/trebuchet_girlz/)
+Art by [@trebuchet_girlz](https://www.instagram.com/trebuchet_girlz/)
 
 Check out an early stages [demo!](https://youtube.com/shorts/ZDdmABv-ZlU?feature=share)
