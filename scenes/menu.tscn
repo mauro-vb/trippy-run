@@ -57,6 +57,7 @@ text = "Quit
 "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 

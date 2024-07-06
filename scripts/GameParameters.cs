@@ -6,7 +6,7 @@ public partial class GameParameters : Node
   public static Vector2 screenSize = new Vector2(720, 1280);
   public static Array<int> laneXs;
   public static float laneSize;
-  public static int nLanes = 3;
+  public static int nLanes = 4;
   public static float scale;
   public static float initialSpeed = 500.0f;
 
