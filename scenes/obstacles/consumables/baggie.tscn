@@ -1,0 +1,106 @@
+[gd_scene load_steps=22 format=3 uid="uid://bn5lqolmrck1y"]
+
+[ext_resource type="Script" path="res://scripts/obstacles/Consumable.cs" id="1_tibn7"]
+[ext_resource type="Texture2D" uid="uid://dkdqpvumif8q" path="res://assets/consumableAnimations/Baggie/frame-1.png" id="2_ykgdo"]
+[ext_resource type="Texture2D" uid="uid://v7jhyge31048" path="res://assets/consumableAnimations/Baggie/frame-2.png" id="3_mtnf5"]
+[ext_resource type="Texture2D" uid="uid://byfqysitj6uqg" path="res://assets/consumableAnimations/Baggie/frame-3.png" id="4_h0o3d"]
+[ext_resource type="Texture2D" uid="uid://twpk373w7vr4" path="res://assets/consumableAnimations/Baggie/frame-4.png" id="5_extit"]
+[ext_resource type="Texture2D" uid="uid://d36kf1sill0lu" path="res://assets/consumableAnimations/Baggie/frame-5.png" id="6_pu5li"]
+[ext_resource type="Texture2D" uid="uid://dlvnbc4to46x2" path="res://assets/consumableAnimations/Baggie/frame-6.png" id="7_vuw8x"]
+[ext_resource type="Texture2D" uid="uid://c6ursp6kudobr" path="res://assets/consumableAnimations/Baggie/frame-7.png" id="8_31dbv"]
+[ext_resource type="Texture2D" uid="uid://cr77gmuus73ji" path="res://assets/consumableAnimations/Baggie/frame-8.png" id="9_o8btm"]
+[ext_resource type="Texture2D" uid="uid://cbn7vbb63016l" path="res://assets/consumableAnimations/Baggie/frame-9.png" id="10_bpvjr"]
+[ext_resource type="Texture2D" uid="uid://rwqriycynxdm" path="res://assets/consumableAnimations/Baggie/frame-10.png" id="11_v42l3"]
+[ext_resource type="Texture2D" uid="uid://b8jw2ts8kfss3" path="res://assets/consumableAnimations/Baggie/frame-11.png" id="12_ep0wy"]
+[ext_resource type="Texture2D" uid="uid://cyo8ncotrhujf" path="res://assets/consumableAnimations/Baggie/frame-12.png" id="13_amr2h"]
+[ext_resource type="Texture2D" uid="uid://sayox5eqv8g3" path="res://assets/consumableAnimations/Baggie/frame-13.png" id="14_8d7tr"]
+[ext_resource type="Texture2D" uid="uid://c4a4bw2n8k4hh" path="res://assets/consumableAnimations/Baggie/frame-14.png" id="15_g4mdv"]
+[ext_resource type="Texture2D" uid="uid://sdd6gmjfqs23" path="res://assets/consumableAnimations/Baggie/frame-15.png" id="16_63hxq"]
+[ext_resource type="Texture2D" uid="uid://bomdww74o7dow" path="res://assets/consumableAnimations/Baggie/frame-16.png" id="17_5a163"]
+[ext_resource type="Texture2D" uid="uid://dh8ypnweirnt3" path="res://assets/consumableAnimations/Baggie/frame-17.png" id="18_0jyas"]
+[ext_resource type="Texture2D" uid="uid://cl1el38g3cgns" path="res://assets/consumableAnimations/Baggie/frame-18.png" id="19_lipsj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5xmq"]
+radius = 44.0114
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhfxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ykgdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mtnf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h0o3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_extit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pu5li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vuw8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31dbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o8btm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bpvjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v42l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ep0wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_amr2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8d7tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g4mdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_63hxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5a163")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0jyas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lipsj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Baggie" type="Node2D" node_paths=PackedStringArray("collisionArea", "_sprite")]
+script = ExtResource("1_tibn7")
+name = "Baggie"
+collisionArea = NodePath("Area2D")
+_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_x5xmq")
+debug_color = Color(0.936828, 0.986927, 1, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0.999999)
+scale = Vector2(0.512605, 0.512605)
+sprite_frames = SubResource("SpriteFrames_jhfxi")
+autoplay = "default"
+frame = 15
+frame_progress = 0.0699404

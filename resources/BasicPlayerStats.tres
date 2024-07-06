@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://bph47kwxqt5yt"]
+
+[ext_resource type="Script" path="res://scripts/PlayerStats.cs" id="1_plpps"]
+
+[resource]
+script = ExtResource("1_plpps")
+BaseDelay = 0.2
+DelayIncrement = 0.1
+DelayReduction = 0.1
+AddedDelayDuration = 7.0
+WeedDelayIncrement = 0.3
+WeedDuration = 5.0
+CloudBaseSize = 80.0
+CloudSizeReduction = 0.7
+BaseSkipProbability = 0.0
+BaggieDuration = 8.0
+BaggieSkipProbability = 0.4
+ShroomDuration = 10.0
+LitDuration = 5.0

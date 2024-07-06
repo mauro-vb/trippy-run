@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkcgql0tdhugi"]
+
+[ext_resource type="Script" path="res://scripts/Menu.cs" id="1_vyhpm"]
+[ext_resource type="Texture2D" uid="uid://bwx34g7frwg6u" path="res://assets/backgrounds/main.png" id="2_ygaf1"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vyhpm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 719.0
+offset_bottom = 1280.0
+texture = ExtResource("2_ygaf1")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = 183.0
+offset_right = 217.0
+offset_bottom = 588.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+vertical = true
+
+[node name="PlayButton" type="Button" parent="PanelContainer/BoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="OtherButton" type="Button" parent="PanelContainer/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Button1"
+text = "     Info     "
+
+[node name="QuitButton" type="Button" parent="PanelContainer/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Button2"
+text = "Quit
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="+" type="Button" parent="PanelContainer/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+
+"
+
+[node name="-" type="Button" parent="PanelContainer/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-
+"

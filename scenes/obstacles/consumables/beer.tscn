@@ -1,0 +1,130 @@
+[gd_scene load_steps=28 format=3 uid="uid://tuarnmhkvx4h"]
+
+[ext_resource type="Script" path="res://scripts/obstacles/Consumable.cs" id="1_57vug"]
+[ext_resource type="Texture2D" uid="uid://c5dliesrfvubo" path="res://assets/consumableAnimations/Beer/frame_00.png" id="2_ooovj"]
+[ext_resource type="Texture2D" uid="uid://cey8tdvp3sufn" path="res://assets/consumableAnimations/Beer/frame_01.png" id="3_4vb5a"]
+[ext_resource type="Texture2D" uid="uid://chisamuasvlxy" path="res://assets/consumableAnimations/Beer/frame_02.png" id="4_sig12"]
+[ext_resource type="Texture2D" uid="uid://bj1i3lc721rfy" path="res://assets/consumableAnimations/Beer/frame_03.png" id="5_3ik8n"]
+[ext_resource type="Texture2D" uid="uid://c6li2cr1y81uw" path="res://assets/consumableAnimations/Beer/frame_04.png" id="6_urhqy"]
+[ext_resource type="Texture2D" uid="uid://datkf26j632ty" path="res://assets/consumableAnimations/Beer/frame_05.png" id="7_wvdpu"]
+[ext_resource type="Texture2D" uid="uid://bf4ow8ltdv20t" path="res://assets/consumableAnimations/Beer/frame_06.png" id="8_4sd5k"]
+[ext_resource type="Texture2D" uid="uid://dd5gguqadao7t" path="res://assets/consumableAnimations/Beer/frame_07.png" id="9_scmcd"]
+[ext_resource type="Texture2D" uid="uid://cir7r25exbakk" path="res://assets/consumableAnimations/Beer/frame_08.png" id="10_wwjm5"]
+[ext_resource type="Texture2D" uid="uid://cj8i0kaonwm52" path="res://assets/consumableAnimations/Beer/frame_09.png" id="11_ys6kw"]
+[ext_resource type="Texture2D" uid="uid://bqa8iwgdymdb6" path="res://assets/consumableAnimations/Beer/frame_10.png" id="12_3ker4"]
+[ext_resource type="Texture2D" uid="uid://ckmfddnnyewo7" path="res://assets/consumableAnimations/Beer/frame_11.png" id="13_75fyr"]
+[ext_resource type="Texture2D" uid="uid://brhsm5i2jqomd" path="res://assets/consumableAnimations/Beer/frame_12.png" id="14_uqkj0"]
+[ext_resource type="Texture2D" uid="uid://djmojfjvmg37u" path="res://assets/consumableAnimations/Beer/frame_13.png" id="15_whij2"]
+[ext_resource type="Texture2D" uid="uid://cngtseaqlyvm5" path="res://assets/consumableAnimations/Beer/frame_14.png" id="16_wrrfi"]
+[ext_resource type="Texture2D" uid="uid://bwpbmx1sgo6hf" path="res://assets/consumableAnimations/Beer/frame_15.png" id="17_65mrp"]
+[ext_resource type="Texture2D" uid="uid://c41uuo227p7al" path="res://assets/consumableAnimations/Beer/frame_16.png" id="18_mbgl7"]
+[ext_resource type="Texture2D" uid="uid://oexr453f8lqw" path="res://assets/consumableAnimations/Beer/frame_17.png" id="19_d1d13"]
+[ext_resource type="Texture2D" uid="uid://njsrd6x1sbnj" path="res://assets/consumableAnimations/Beer/frame_18.png" id="20_ffrh3"]
+[ext_resource type="Texture2D" uid="uid://b43sr22qudm0i" path="res://assets/consumableAnimations/Beer/frame_19.png" id="21_c8h20"]
+[ext_resource type="Texture2D" uid="uid://ciy6b6ji04h40" path="res://assets/consumableAnimations/Beer/frame_20.png" id="22_v2xbb"]
+[ext_resource type="Texture2D" uid="uid://b23b2vd42wpy1" path="res://assets/consumableAnimations/Beer/frame_21.png" id="23_ek4qt"]
+[ext_resource type="Texture2D" uid="uid://csdd56ksdsj0w" path="res://assets/consumableAnimations/Beer/frame_22.png" id="24_xh2oq"]
+[ext_resource type="Texture2D" uid="uid://cqs61six4l122" path="res://assets/consumableAnimations/Beer/frame_23.png" id="25_xgcdd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5xmq"]
+radius = 44.0114
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhfxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ooovj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4vb5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sig12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ik8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_urhqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wvdpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4sd5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_scmcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wwjm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ys6kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3ker4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_75fyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uqkj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_whij2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wrrfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_65mrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mbgl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d1d13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ffrh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_c8h20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_v2xbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ek4qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xh2oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xgcdd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[node name="Beer" type="Node2D" node_paths=PackedStringArray("collisionArea", "_sprite")]
+script = ExtResource("1_57vug")
+name = "Beer"
+collisionArea = NodePath("Area2D")
+_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_x5xmq")
+debug_color = Color(0.914417, 0.270411, 0.281755, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, 9.53674e-07)
+scale = Vector2(0.266791, 0.266791)
+sprite_frames = SubResource("SpriteFrames_jhfxi")
+autoplay = "default"
+frame = 15
+frame_progress = 0.751218

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bva3rej7y4dex"]
+
+[ext_resource type="Script" path="res://scripts/obstacles/Fence.cs" id="1_dq6s4"]
+[ext_resource type="Texture2D" uid="uid://by65mbes2x38c" path="res://assets/Obstacles/fence.png" id="2_lo867"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fbo2"]
+size = Vector2(147, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhfxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lo867")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fence" type="Node2D" node_paths=PackedStringArray("collisionArea", "_sprite")]
+script = ExtResource("1_dq6s4")
+collisionArea = NodePath("Area2D")
+_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6fbo2")
+debug_color = Color(0.852579, 0.80455, 0, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.391667, 0.391667)
+sprite_frames = SubResource("SpriteFrames_jhfxi")

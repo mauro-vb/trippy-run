@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbobbvy7a3d6n"]
+
+[ext_resource type="Script" path="res://scripts/obstacles/Consumable.cs" id="1_4o7ex"]
+[ext_resource type="Texture2D" uid="uid://6qfgvfm0ahkb" path="res://assets/consumableAnimations/Shroom/frame-1.png" id="2_1oh65"]
+[ext_resource type="Texture2D" uid="uid://r5k1oum2dpu" path="res://assets/consumableAnimations/Shroom/frame-2.png" id="3_pggn1"]
+[ext_resource type="Texture2D" uid="uid://jsobfdgxil40" path="res://assets/consumableAnimations/Shroom/frame-3.png" id="4_y1ely"]
+[ext_resource type="Texture2D" uid="uid://dcy45tkmnhy1o" path="res://assets/consumableAnimations/Shroom/frame-4.png" id="5_vxf7x"]
+[ext_resource type="Texture2D" uid="uid://biwtiwxdobepm" path="res://assets/consumableAnimations/Shroom/frame-5.png" id="6_kbatt"]
+[ext_resource type="Texture2D" uid="uid://b8dappwctilgl" path="res://assets/consumableAnimations/Shroom/frame-6.png" id="7_r2v5h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5xmq"]
+radius = 44.0114
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhfxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1oh65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pggn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y1ely")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vxf7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kbatt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r2v5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Shroom" type="Node2D" node_paths=PackedStringArray("collisionArea", "_sprite")]
+script = ExtResource("1_4o7ex")
+name = "Shroom"
+collisionArea = NodePath("Area2D")
+_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_x5xmq")
+debug_color = Color(0.631765, 0.087506, 0.846567, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.202675, 0.202675)
+sprite_frames = SubResource("SpriteFrames_jhfxi")
+autoplay = "default"
+frame = 2
+frame_progress = 0.668735

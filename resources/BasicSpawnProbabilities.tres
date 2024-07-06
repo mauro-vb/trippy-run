@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SpawnProbabilities" load_steps=2 format=3 uid="uid://cs541hlcdx4nk"]
+
+[ext_resource type="Script" path="res://scripts/SpawnProbabilities.cs" id="1_0txyu"]
+
+[resource]
+script = ExtResource("1_0txyu")
+FenceProba = 0.7
+ConsumableProba = 0.5
+BeerProba = 40.0
+WeedProba = 20.0
+BaggieProba = 25.0
+ShroomProba = 15.0
