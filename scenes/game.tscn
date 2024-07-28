@@ -1,17 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0snav5gcf1ro"]
+[gd_scene load_steps=6 format=3 uid="uid://b0snav5gcf1ro"]
 
 [ext_resource type="PackedScene" uid="uid://x04ikpr331eb" path="res://scenes/parallax_background.tscn" id="1_0j7s4"]
 [ext_resource type="PackedScene" uid="uid://d0e508qj0tt55" path="res://scenes/player.tscn" id="1_t0e35"]
 [ext_resource type="Script" path="res://scripts/ObstacleGenerator.cs" id="3_6eyu5"]
 [ext_resource type="Resource" uid="uid://cs541hlcdx4nk" path="res://resources/BasicSpawnProbabilities.tres" id="3_d6f81"]
+[ext_resource type="Script" path="res://scripts/LanesHandler.cs" id="5_rthb5"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_0j7s4")]
 layer = -1
 
-[node name="ObstacleGen" type="Node2D" parent="."]
+[node name="ObstacleGen" type="Node2D" parent="." node_paths=PackedStringArray("lanesHandler")]
 script = ExtResource("3_6eyu5")
+lanesHandler = NodePath("../LanesHandler")
 spawnProbabilities = ExtResource("3_d6f81")
 
-[node name="Player" parent="." instance=ExtResource("1_t0e35")]
+[node name="LanesHandler" type="Node2D" parent="."]
+script = ExtResource("5_rthb5")
+initialLanes = 8
+
+[node name="Player" parent="." node_paths=PackedStringArray("lanesHandler") instance=ExtResource("1_t0e35")]
+lanesHandler = NodePath("../LanesHandler")

@@ -35,6 +35,8 @@ public partial class Player : CharacterBody2D
     }
 
     [Export]
+    private LanesHandler lanesHandler;
+    [Export]
     private PlayerStats playerStats;
     [Export]
     private AnimatedSprite2D _animatedSprite;
@@ -53,8 +55,8 @@ public partial class Player : CharacterBody2D
     private SwipeDetector mySwipeDetector;
     public override void _Ready()
     {
-        _laneXs = GameParameters.laneXs;
-        _laneSize = GameParameters.laneSize;
+        _laneXs = lanesHandler.laneXs;
+        _laneSize = lanesHandler.laneSize;
         LaneIndex = 1;
         Position = new Vector2(_laneXs[LaneIndex], 1000);
         mySwipeDetector = GetNode<SwipeDetector>("SwipeDetector");
@@ -247,5 +249,6 @@ public partial class Player : CharacterBody2D
   {
     base._Process(delta);
     HandleAnimation();
+    GD.Print(_laneXs, Position.X);
   }
 }

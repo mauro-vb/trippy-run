@@ -6,9 +6,11 @@ using Godot.Collections;
 public partial class ObstacleGenerator : Node2D
 {
   [Export]
+  private LanesHandler lanesHandler;
+  [Export]
   private SpawnProbabilities spawnProbabilities;
   private  Dictionary<string, float> probaDict;
-  private static Array<int> _laneXs =  GameParameters.laneXs.Duplicate();
+  private Array<int> _laneXs;
   private static int ySpawnLine = -20;
 
   private static PackedScene fence = GD.Load<PackedScene>("res://scenes/obstacles/fence.tscn");
@@ -21,8 +23,10 @@ public partial class ObstacleGenerator : Node2D
     };
   private static int _fenceCounter = 0;
   private Timer waveTimer = new Timer();
+
 	public override void _Ready()
 	{
+    _laneXs =  new Array<int>{}; // start empty
     probaDict = spawnProbabilities.GetProbabilitiesDictionary();
     AddChild(waveTimer);
     waveTimer.WaitTime = 3;
@@ -33,10 +37,19 @@ public partial class ObstacleGenerator : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+
 	}
 
-  private static Func<int,float, bool> ShouldSpawnFence = (counter,fenceProba) => (GD.Randf() < fenceProba) && (_fenceCounter < _laneXs.Count - 1) ? true :  false;
-  private static Func<float,bool> ShouldSpawnConsumable = consumableProba => GD.Randf() < consumableProba ? true : false;
+  //private static Func<int,float, bool> ShouldSpawnFence = (counter,fenceProba) => (GD.Randf() < fenceProba) && (_fenceCounter < _laneXs.Count - 1) ? true :  false;
+  //private static Func<float,bool> ShouldSpawnConsumable = consumableProba => GD.Randf() < consumableProba ? true : false;
+  private bool ShouldSpawnFence(int counter, float fenceProba) {
+    return (GD.Randf() < fenceProba) && (_fenceCounter < _laneXs.Count - 1);
+  }
+
+  private bool ShouldSpawnConsumable(float consumableProba) {
+    return GD.Randf() < consumableProba;
+  }
+
   private string GetRandomConsumable()
     {
         float total = 0;
@@ -76,6 +89,9 @@ public partial class ObstacleGenerator : Node2D
   }
   private void SpawnLine()
   {
+    if (_laneXs != lanesHandler.laneXs) {
+      _laneXs = lanesHandler.laneXs.Duplicate();
+    }
     _fenceCounter = 0;
     _laneXs.Shuffle();
     foreach (int laneX in _laneXs)

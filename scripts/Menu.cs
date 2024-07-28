@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Menu : Control
 {
@@ -16,7 +15,6 @@ public partial class Menu : Control
 
   private void PlayButtonPressed()
   {
-    //GD.Print(GameParameters.ScreenSize);
     GetTree().ChangeSceneToFile("scenes/game.tscn");
   }
   private void QuitButtonPressed()

@@ -55,20 +55,3 @@ layout_mode = 2
 theme_type_variation = &"Button2"
 text = "Quit
 "
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="+" type="Button" parent="PanelContainer/BoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "+
-"
-
-[node name="-" type="Button" parent="PanelContainer/BoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "-
-"

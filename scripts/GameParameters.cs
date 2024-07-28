@@ -12,7 +12,7 @@ public partial class GameParameters : Node
 
   private GameParameters() // constructor for the GameParameters class method that is called when an instance of the class is created
   {
-    laneSize = (screenSize.X/(nLanes*2)) * 2;
+    laneSize = screenSize.X/(nLanes*2) * 2;
     laneXs = new Array<int>();
     scale = 3.0f/nLanes;
     {
