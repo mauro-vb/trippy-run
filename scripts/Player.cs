@@ -22,12 +22,10 @@ public partial class Player : CharacterBody2D
             if (value >= _laneXs.Count)
             {
               finalValue = value - _laneXs.Count;
-              //Position = new Vector2(_laneXs[finalValue] - _laneSize, Position.Y);
             }
             if (value < 0)
             {
               finalValue = _laneXs.Count + value;
-              //Position = new Vector2(_laneXs[finalValue] + _laneSize, Position.Y);
             }
           }
           _laneIndex = Mathf.Clamp(finalValue, 0, _laneXs.Count - 1);
@@ -55,6 +53,7 @@ public partial class Player : CharacterBody2D
     private SwipeDetector mySwipeDetector;
     public override void _Ready()
     {
+        if (lanesHandler ==null || playerStats == null) {GD.PrintErr("Player is missing export variables.");}
         _laneXs = lanesHandler.laneXs;
         _laneSize = lanesHandler.laneSize;
         LaneIndex = 1;
@@ -79,6 +78,13 @@ public partial class Player : CharacterBody2D
         _baggieTimer.Timeout += HandleBaggieTimeout;
         _shroomTimer.Timeout += HandleShroomTimeout;
 
+        lanesHandler.ChangedNumberOfLanes += _LanesChanged;
+
+    }
+
+    // Lane Management
+    private void _LanesChanged() {
+      Scale = new Vector2(lanesHandler.scale, lanesHandler.scale);
     }
 
     // Obstacles
@@ -249,6 +255,5 @@ public partial class Player : CharacterBody2D
   {
     base._Process(delta);
     HandleAnimation();
-    GD.Print(_laneXs, Position.X);
   }
 }

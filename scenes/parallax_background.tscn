@@ -17,7 +17,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.841743, 0.15367)
 
-[node name="Background" type="ParallaxBackground"]
+[node name="ParallaxBackground" type="ParallaxBackground"]
 layer = 0
 script = ExtResource("1_v85qf")
 
@@ -30,44 +30,218 @@ motion_mirroring = Vector2(0, 1308)
 position = Vector2(-139.837, -5.83679)
 color = Color(0.360784, 0.360784, 0.360784, 1)
 
-[node name="StreetTiles" type="Sprite2D" parent="ParallaxLayer"]
-z_as_relative = false
-position = Vector2(473.163, 570.163)
-rotation = 1.5708
-scale = Vector2(0.900055, 0.900055)
-texture = ExtResource("1_yldpk")
+[node name="StreetTiles" type="Node2D" parent="ParallaxLayer"]
+position = Vector2(360, 0)
 
 [node name="StreetTiles2" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
 z_as_relative = false
-position = Vector2(0.00299072, 794.396)
-rotation = 3.14159
-scale = Vector2(0.9997, 0.9997)
+position = Vector2(-713.837, -1897.84)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
 texture = ExtResource("1_yldpk")
 
 [node name="StreetTiles3" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
 z_as_relative = false
-position = Vector2(1026.45, -0.631104)
-rotation = 3.14159
-scale = Vector2(0.9997, 0.9997)
+position = Vector2(1.72769, -973.976)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
 texture = ExtResource("1_yldpk")
 
 [node name="StreetTiles4" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
 z_as_relative = false
-position = Vector2(1025.34, 783.764)
-rotation = 3.14159
-scale = Vector2(0.9997, 0.9997)
+position = Vector2(-704.271, -974.977)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
 texture = ExtResource("1_yldpk")
 
-[node name="NightLights" type="Sprite2D" parent="ParallaxLayer"]
+[node name="StreetTiles" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(1.16306, -1897.84)
+rotation = 1.5708
+scale = Vector2(0.900055, 0.900055)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles5" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(697.565, -1897.96)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles6" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(1413.13, -974.102)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles7" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(707.131, -975.104)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles8" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(1412.56, -1897.96)
+rotation = 1.5708
+scale = Vector2(0.900055, 0.900055)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles9" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-2128.44, -1897.96)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles10" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-1412.87, -974.102)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles11" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-2118.87, -975.104)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles12" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-1413.43, -1897.96)
+rotation = 1.5708
+scale = Vector2(0.900055, 0.900055)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles13" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-707.837, 333.164)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles14" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(7.72769, 1257.02)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles15" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-698.271, 1256.02)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles16" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(7.16306, 333.163)
+rotation = 1.5708
+scale = Vector2(0.900055, 0.900055)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles17" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(703.565, 333.037)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles18" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(1419.13, 1256.9)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles19" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(713.131, 1255.9)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles20" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(1418.56, 333.037)
+rotation = 1.5708
+scale = Vector2(0.900055, 0.900055)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles21" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-2122.44, 333.037)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles22" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-1406.87, 1256.9)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles23" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-2112.87, 1255.9)
+rotation = -1.5708
+scale = Vector2(0.899785, 0.899785)
+texture = ExtResource("1_yldpk")
+
+[node name="StreetTiles24" type="Sprite2D" parent="ParallaxLayer/StreetTiles"]
+z_as_relative = false
+position = Vector2(-1407.43, 333.037)
+rotation = 1.5708
+scale = Vector2(0.900055, 0.900055)
+texture = ExtResource("1_yldpk")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 4500)
+
+[node name="NightLights" type="Sprite2D" parent="ParallaxLayer2"]
 modulate = Color(1, 0.901961, 0.572549, 1)
 material = SubResource("CanvasItemMaterial_4rxd4")
-position = Vector2(932.163, 494.163)
+position = Vector2(460.163, -1909.84)
 scale = Vector2(16.0051, 16.0051)
 texture = SubResource("GradientTexture2D_busdu")
 
-[node name="NightLights2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="NightLights2" type="Sprite2D" parent="ParallaxLayer2"]
 modulate = Color(1, 0.901961, 0.572549, 1)
 material = SubResource("CanvasItemMaterial_4rxd4")
-position = Vector2(-207.837, 494.163)
+position = Vector2(-464.837, -1903.84)
+scale = Vector2(16.0051, 16.0051)
+texture = SubResource("GradientTexture2D_busdu")
+
+[node name="NightLights3" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(1, 0.901961, 0.572549, 1)
+material = SubResource("CanvasItemMaterial_4rxd4")
+position = Vector2(550.163, -375.837)
+scale = Vector2(16.0051, 16.0051)
+texture = SubResource("GradientTexture2D_busdu")
+
+[node name="NightLights4" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(1, 0.901961, 0.572549, 1)
+material = SubResource("CanvasItemMaterial_4rxd4")
+position = Vector2(-473.837, -363.837)
+scale = Vector2(16.0051, 16.0051)
+texture = SubResource("GradientTexture2D_busdu")
+
+[node name="NightLights5" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(1, 0.901961, 0.572549, 1)
+material = SubResource("CanvasItemMaterial_4rxd4")
+position = Vector2(514.163, 1095.16)
+scale = Vector2(16.0051, 16.0051)
+texture = SubResource("GradientTexture2D_busdu")
+
+[node name="NightLights6" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(1, 0.901961, 0.572549, 1)
+material = SubResource("CanvasItemMaterial_4rxd4")
+position = Vector2(-455.837, 1119.16)
 scale = Vector2(16.0051, 16.0051)
 texture = SubResource("GradientTexture2D_busdu")

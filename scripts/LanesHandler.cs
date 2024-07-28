@@ -11,13 +11,12 @@ public partial class LanesHandler : Node2D
     public float laneSize;
     public float scale;
 
-    // public LanesHandler()
-    // {
-    // }
+    [Signal]
+    public delegate void ChangedNumberOfLanesEventHandler();
 
     public override void _Ready()
     {
-        GD.Print(initialLanes);
+        if (initialLanes == 0) {GD.PrintErr("lanesHandler is missing initialLanes export.");}
         ChangeNumberOfLanes(initialLanes);
     }
 
@@ -25,6 +24,7 @@ public partial class LanesHandler : Node2D
     {
         nLanes = newNumberOfLanes;
         RecalculateLanes();
+        EmitSignal(SignalName.ChangedNumberOfLanes);
     }
 
     private void RecalculateLanes()

@@ -26,14 +26,21 @@ public partial class ObstacleGenerator : Node2D
 
 	public override void _Ready()
 	{
+    if (lanesHandler == null || spawnProbabilities == null) {GD.PrintErr("ObstacleGenerator is missing export objects.");}
     _laneXs =  new Array<int>{}; // start empty
     probaDict = spawnProbabilities.GetProbabilitiesDictionary();
     AddChild(waveTimer);
     waveTimer.WaitTime = 3;
     waveTimer.Start();
     waveTimer.Timeout += SpawnLine;
+
+    lanesHandler.ChangedNumberOfLanes += _LanesChanged;
+
 	}
 
+  private void _LanesChanged() {
+    _laneXs = lanesHandler.laneXs.Duplicate();
+  }
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
@@ -89,9 +96,7 @@ public partial class ObstacleGenerator : Node2D
   }
   private void SpawnLine()
   {
-    if (_laneXs != lanesHandler.laneXs) {
-      _laneXs = lanesHandler.laneXs.Duplicate();
-    }
+    if (_laneXs.Count == 0) {_LanesChanged();}
     _fenceCounter = 0;
     _laneXs.Shuffle();
     foreach (int laneX in _laneXs)
