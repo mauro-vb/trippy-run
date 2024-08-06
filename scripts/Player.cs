@@ -84,7 +84,20 @@ public partial class Player : CharacterBody2D
 
     // Lane Management
     private void _LanesChanged() {
-      Scale = new Vector2(lanesHandler.scale, lanesHandler.scale);
+
+      Vector2 newScale = new Vector2(GameParameters.scale, GameParameters.scale);
+      Tween tween = GetTree().CreateTween();
+      tween.TweenProperty(this, "scale", newScale, GameParameters.scaleTweenSpeed);
+
+      _laneXs = lanesHandler.laneXs;
+      _laneSize = lanesHandler.laneSize;
+      LaneIndex = GD.Randf() > .5 ? LaneIndex: LaneIndex + 1;
+      if (!_canTeleport ) {
+        TweenTweenPosition(1);
+      }
+      else {
+        TeleportPosition();
+      }
     }
 
     // Obstacles
@@ -109,6 +122,8 @@ public partial class Player : CharacterBody2D
           HadBaggie(); break;
         case "Shroom":
           HadShroom(); break;
+        case "Test":
+          HadTest(); break;
         default: break;
       }
     }
@@ -136,6 +151,9 @@ public partial class Player : CharacterBody2D
       _isConfused = true;
       _onShroom = true;
       _shroomTimer.Start(timeSec:playerStats.ShroomDuration);
+    }
+    private void HadTest(){
+      lanesHandler.nLanes += 1;
     }
     private void HandleWeedTimeout()
     {
@@ -192,7 +210,6 @@ public partial class Player : CharacterBody2D
         MoveLeft();
       }
     }
-
     private int GetLaneSkip()
     {
       return !_onBaggie ? (GD.Randf() < playerStats.BaseSkipProbability ? 2 : 1) // if not on Baggie check Base skip proba

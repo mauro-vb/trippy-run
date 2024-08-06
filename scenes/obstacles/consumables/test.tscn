@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://crvtd8jw82qcw"]
+[gd_scene load_steps=5 format=3 uid="uid://crvtd8jw82qcw"]
 
 [ext_resource type="Script" path="res://scripts/obstacles/Consumable.cs" id="1_ngkqa"]
 
@@ -7,9 +7,11 @@ size = Vector2(147, 138)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhfxi"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kt7e0"]
+
 [node name="Tests" type="Node2D" node_paths=PackedStringArray("collisionArea", "_sprite")]
 script = ExtResource("1_ngkqa")
-name = "Baggie"
+name = "Test"
 collisionArea = NodePath("Area2D")
 _sprite = NodePath("AnimatedSprite2D")
 
@@ -19,4 +21,10 @@ _sprite = NodePath("AnimatedSprite2D")
 shape = SubResource("RectangleShape2D_6fbo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_jhfxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.500003, 0.500004)
+scale = Vector2(149, 137)
+texture = SubResource("PlaceholderTexture2D_kt7e0")

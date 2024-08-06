@@ -10,6 +10,8 @@ public partial class GameParameters : Node
   public static float scale;
   public static float initialSpeed = 500.0f;
 
+  public static float scaleTweenSpeed = 2.0f;
+
   private GameParameters() // constructor for the GameParameters class method that is called when an instance of the class is created
   {
     laneSize = screenSize.X/(nLanes*2) * 2;

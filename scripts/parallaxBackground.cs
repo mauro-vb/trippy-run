@@ -2,8 +2,7 @@ using Godot;
 
 public partial class parallaxBackground : ParallaxBackground
 {
-  [Export]
-  private float speed = GameParameters.initialSpeed;
+  private float speed;
   [Export]
   private LanesHandler lanesHandler;
 
@@ -11,14 +10,19 @@ public partial class parallaxBackground : ParallaxBackground
   {
     lanesHandler.ChangedNumberOfLanes += _Rescale;
     Scale = new Vector2(GameParameters.scale, GameParameters.scale);
+    speed = GameParameters.initialSpeed;
   }
   public override void _Process(double delta)
 	{
-    ScrollOffset = new Vector2(ScrollOffset.X, (float)(ScrollOffset.Y + speed * delta));
+    float adjustedSpeed = speed / GameParameters.scale;
+    ScrollOffset = new Vector2(ScrollOffset.X, (float)(ScrollOffset.Y + adjustedSpeed * delta));
 	}
 
   private void _Rescale() {
-    Scale = new Vector2(GameParameters.scale, GameParameters.scale);
-    speed = GameParameters.initialSpeed * lanesHandler.nLanes;
+    Vector2 newScale = new Vector2(GameParameters.scale, GameParameters.scale);
+    Tween tween = GetTree().CreateTween();
+    tween.TweenProperty(this, "scale", newScale, GameParameters.scaleTweenSpeed);
+    speed = GameParameters.initialSpeed;
+
   }
 }

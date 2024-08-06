@@ -6,7 +6,24 @@ public partial class LanesHandler : Node2D
 {
     [Export]
     private int initialLanes;
-    public int nLanes;
+
+    // Backing field for the nLanes property
+    private int _nLanes;
+
+    // Public property for nLanes
+    public int nLanes
+    {
+        get { return _nLanes; }
+        set
+        {
+            if (_nLanes != value)
+            {
+                _nLanes = value;
+                OnNumberOfLanesChanged();
+            }
+        }
+    }
+
     public Array<int> laneXs;
     public float laneSize;
     public float scale;
@@ -16,13 +33,15 @@ public partial class LanesHandler : Node2D
 
     public override void _Ready()
     {
-        if (initialLanes == 0) {GD.PrintErr("lanesHandler is missing initialLanes export.");}
-        ChangeNumberOfLanes(initialLanes);
+        if (initialLanes == 0)
+        {
+            GD.PrintErr("lanesHandler is missing initialLanes export.");
+        }
+        nLanes = initialLanes; // Use the property to initialize
     }
 
-    public void ChangeNumberOfLanes(int newNumberOfLanes)
+    private void OnNumberOfLanesChanged()
     {
-        nLanes = newNumberOfLanes;
         RecalculateLanes();
         EmitSignal(SignalName.ChangedNumberOfLanes);
     }

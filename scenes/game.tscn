@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0snav5gcf1ro"]
+[gd_scene load_steps=7 format=3 uid="uid://b0snav5gcf1ro"]
 
 [ext_resource type="PackedScene" uid="uid://x04ikpr331eb" path="res://scenes/parallax_background.tscn" id="1_0j7s4"]
 [ext_resource type="PackedScene" uid="uid://d0e508qj0tt55" path="res://scenes/player.tscn" id="1_t0e35"]
 [ext_resource type="Script" path="res://scripts/ObstacleGenerator.cs" id="3_6eyu5"]
 [ext_resource type="Resource" uid="uid://cs541hlcdx4nk" path="res://resources/BasicSpawnProbabilities.tres" id="3_d6f81"]
 [ext_resource type="Script" path="res://scripts/LanesHandler.cs" id="5_rthb5"]
+[ext_resource type="Script" path="res://scripts/debugging/n_lanes_buttons.gd" id="6_i1c2m"]
 
 [node name="Game" type="Node2D"]
 
 [node name="LanesHandler" type="Node2D" parent="."]
 script = ExtResource("5_rthb5")
-initialLanes = 8
+initialLanes = 4
 
 [node name="ObstacleGen" type="Node2D" parent="." node_paths=PackedStringArray("lanesHandler")]
 script = ExtResource("3_6eyu5")
@@ -25,3 +26,31 @@ lanesHandler = NodePath("../LanesHandler")
 
 [node name="Player" parent="." node_paths=PackedStringArray("lanesHandler") instance=ExtResource("1_t0e35")]
 lanesHandler = NodePath("../LanesHandler")
+
+[node name="Debugging" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_vertical = 0
+
+[node name="NLaneButtons" type="HBoxContainer" parent="Debugging" node_paths=PackedStringArray("lanes_handler")]
+layout_mode = 0
+offset_right = 297.0
+offset_bottom = 81.0
+script = ExtResource("6_i1c2m")
+lanes_handler = NodePath("../../LanesHandler")
+
+[node name="-" type="Button" parent="Debugging/NLaneButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Button2"
+text = "-
+"
+
+[node name="+" type="Button" parent="Debugging/NLaneButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Button1"
+text = "+
+"
